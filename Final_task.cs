@@ -7,9 +7,9 @@ class Program
     static String[] BuildStartStringArray()
     {
         Random rand = new Random();
-        int len = rand.Next(20, 50);
-        string[] ArrayString = new String[len];
-        for (int i = 0; i < len; i++)
+        byte LenArrayStart = Convert.ToByte(rand.Next(20, 50));
+        string[] ArrayString = new String[LenArrayStart];
+        for (byte i = 0; i < LenArrayStart; i++)
         {
             ArrayString[i] = Build_element();
         }
@@ -19,9 +19,9 @@ class Program
     static String Build_element()
     {
         Random rand = new Random();
-        int len = rand.Next(1, 20);
-        char[] a = new char[len];
-        for (int i = 0; i < len; i++)
+        int LenElement = rand.Next(1, 20);
+        char[] a = new char[LenElement];
+        for (int i = 0; i < LenElement; i++)
         {
             a[i] = (char)rand.Next(0x0410, 0x44F);
         }
@@ -30,9 +30,9 @@ class Program
     }
      static String[] FinalyStringArray(String[] StartArray)
     {
-        byte len =Convert.ToByte(StartArray.Length);
+        byte LenArrayStart =Convert.ToByte(StartArray.Length);
         String[] FinalyArray=new String[1];
-        for (byte i = 0; i < len; i++)
+        for (byte i = 0; i < LenArrayStart; i++)
         {
             if(StartArray[i].Length<4){
                  Array.Resize(ref FinalyArray, FinalyArray.Length + 1);
